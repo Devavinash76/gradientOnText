@@ -1,0 +1,23 @@
+Positioned(
+                          bottom: 10,
+                          child: ShaderMask(
+                            shaderCallback: (Rect bounds) {
+                              return const LinearGradient(
+                                begin: Alignment.bottomLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Colors.blue, // Starting color
+                                  Colors.green, // Ending color
+                                ],
+                              ).createShader(bounds);
+                            },
+                            child: Text(
+                              data?.category ?? "",
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white, // This color will be masked by the gradient
+                              ),
+                            ),
+                          ),
+                        ),
